@@ -1,0 +1,38 @@
+<head>
+        <title>Font Awesome Icons</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<div class="card" >
+        <h4 class="card-header">Books</h4>
+        <ul class="list-group list-group-flush" *ngFor ="let i of arrayname">
+            <li class="list-group-item"><span class="glyphicon glyphicon-th-list"></span>&nbsp;&nbsp;<a (click)="showdetails(curname=i.name)">{{i.name}}</a></li>
+        </ul>
+</div><br/><br/><br/><br/>
+
+<div *ngIf="errormsg" class="alert alert-danger" role="alert">
+        <strong>Oopsss !!! Some Error Occured....</strong><br/>
+            Try:<br/>
+            Checking the network cables, modem, and router<br/>
+            Reconnecting to Wi-Fi<br/>
+            Running Windows Network Diagnostics <br/>
+</div>
+
+<div class="card" id="showdiv" *ngIf="show" >
+      <h3 class="card-header">Name : &nbsp;{{arraydetails.name}}</h3>
+    <div class="card-body">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">URL : &nbsp;{{arraydetails.url}}</li>
+        <li class="list-group-item">ISBN : &nbsp;{{arraydetails.isbn}}</li>
+        <li class="list-group-item" >Authors : &nbsp;{{arraydetails.authors}}</li>
+        <li class="list-group-item">No. of Pages : &nbsp;{{arraydetails.numberOfPages}}</li>
+        <li class="list-group-item">Publisher : &nbsp;{{arraydetails.publisher}}</li>
+        <li class="list-group-item">Country : &nbsp;{{arraydetails.country}}</li>
+        <li class="list-group-item">Media-Type : &nbsp;{{arraydetails.mediaType}}</li>
+        <li class="list-group-item">Released : &nbsp;{{arraydetails.released}}</li>
+        <li class="list-group-item" *ngFor ="let ch of arraydetails.characters">Characters : &nbsp;{{ch}}</li>
+        <li class="list-group-item" *ngFor ="let c of arraydetails.povCharacters">PovCharacters : &nbsp;{{c}}</li>
+    </ul>
+    </div>
+  </div>

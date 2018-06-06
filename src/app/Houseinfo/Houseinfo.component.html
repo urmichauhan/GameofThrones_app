@@ -1,0 +1,43 @@
+<head>
+        <title>Font Awesome Icons</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<div class="card" >
+        <h4 class="card-header">Houses</h4>
+        <ul class="list-group list-group-flush" *ngFor ="let i of arrayname">
+            <li class="list-group-item"><span class="glyphicon glyphicon-th-list"></span>&nbsp;&nbsp;<a (click)="showdetails(curname=i.name)">{{i.name}}</a></li>
+        </ul>
+</div><br/><br/><br/><br/>
+
+<div *ngIf="errormsg" class="alert alert-danger" role="alert">
+        <strong>Oopsss !!! Some Error Occured....</strong><br/>
+            Try:<br/>
+            Checking the network cables, modem, and router<br/>
+            Reconnecting to Wi-Fi<br/>
+            Running Windows Network Diagnostics <br/>
+</div>
+
+<div class="card" id="showdiv" *ngIf="show" >
+      <h3 class="card-header">Name : &nbsp;{{arraydetails.name}}</h3>
+    <div class="card-body">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Region : &nbsp;{{arraydetails.region}}</li>
+        <li class="list-group-item">URL : &nbsp;{{arraydetails.url}}</li>
+        <li class="list-group-item">Coat of Arms : &nbsp;{{arraydetails.coatOfArms}}</li>
+        <li class="list-group-item">Words : &nbsp;{{arraydetails.words}}</li>
+        <li class="list-group-item" ng-repeat="t in arraydetails.titles">Titles : &nbsp;{{t}}</li>
+        <li class="list-group-item" ng-repeat="s in arraydetails.seats">Seats : &nbsp;{{s}}</li>
+        <li class="list-group-item">CurrentLord : &nbsp;{{arraydetails.currentLord}}</li>
+        <li class="list-group-item">Heir : &nbsp;{{arraydetails.heir}}</li>
+        <li class="list-group-item">Overlord : &nbsp;{{arraydetails.overlord}}</li>
+        <li class="list-group-item">Founded : &nbsp;{{arraydetails.founded}}</li>
+        <li class="list-group-item">Founder : &nbsp;{{arraydetails.founder}}</li>
+        <li class="list-group-item">DiedOut : &nbsp;{{arraydetails.diedOut}}</li>
+        <li class="list-group-item" ng-repeat="a in arraydetails.ancestralWeapons">Ancestral-Weapons : &nbsp;{{a}}</li>
+        <li class="list-group-item" ng-repeat="c in arraydetails.cadetBranches">Cadet-Branches : &nbsp;{{c}}</li>
+        <li class="list-group-item" ng-repeat="s in arraydetails.swornMembers">Sworn-Members : &nbsp;{{s}}</li>
+    </ul>
+    </div>
+  </div>
